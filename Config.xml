@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationConfiguration xmlns="http://opcfoundation.org/UA/SDK/Configuration.xsd">
+	<ApplicationName>OPC UA Client</ApplicationName>
+	<ApplicationUri>urn:localhost:OPCUAClient</ApplicationUri>
+	<ProductUri>urn:localhost:OPCUAClient</ProductUri>
+	<ApplicationType>Client_1</ApplicationType>
+	<!-- Corrected ApplicationType -->
+	<SecurityConfiguration>
+		<ApplicationCertificate>
+			<StoreType>Directory</StoreType>
+			<StorePath>CertificateStores/Own</StorePath>
+			<SubjectName>CN=OPC UA Client, O=OPC Foundation, C=US</SubjectName>
+		</ApplicationCertificate>
+		<TrustedPeerCertificates>
+			<StoreType>Directory</StoreType>
+			<StorePath>CertificateStores/UA Applications</StorePath>
+		</TrustedPeerCertificates>
+		<TrustedIssuerCertificates>
+			<StoreType>Directory</StoreType>
+			<StorePath>CertificateStores/UA Certificate Authorities</StorePath>
+		</TrustedIssuerCertificates>
+		<RejectedCertificates>
+			<StoreType>Directory</StoreType>
+			<StorePath>CertificateStores/Rejected</StorePath>
+		</RejectedCertificates>
+		<AutoAcceptUntrustedCertificates>true</AutoAcceptUntrustedCertificates>
+		<AddAppCertToTrustedStore>true</AddAppCertToTrustedStore>
+	</SecurityConfiguration>
+	<TransportQuotas>
+		<OperationTimeout>120000</OperationTimeout>
+		<MaxStringLength>1048576</MaxStringLength>
+		<MaxByteStringLength>1048576</MaxByteStringLength>
+		<MaxArrayLength>65535</MaxArrayLength>
+		<MaxMessageSize>4194304</MaxMessageSize>
+		<MaxBufferSize>65535</MaxBufferSize>
+		<ChannelLifetime>300000</ChannelLifetime>
+		<SecurityTokenLifetime>3600000</SecurityTokenLifetime>
+	</TransportQuotas>
+	<ClientConfiguration>
+		<DefaultSessionTimeout>3600000</DefaultSessionTimeout>
+		<MinSubscriptionLifetime>10000</MinSubscriptionLifetime>
+	</ClientConfiguration>
+
+</ApplicationConfiguration>
+
+
+
